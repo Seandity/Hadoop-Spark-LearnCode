@@ -21,6 +21,7 @@ object StatisticDemo {
 
     val statisticResult = Statistics.colStats(changeRdd)
 
+
     println("this is max "+statisticResult.max)
     println("this is min "+statisticResult.min)
     println("this is avg "+statisticResult.mean)
