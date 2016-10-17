@@ -29,6 +29,8 @@ object AttributeFunctions {
     val std = doubleRdd.stdev()
     println("标准差为: "+std)
     //还有样本方差等别的函数，可以自己尝试
+
+
     context.stop()
   }
 
