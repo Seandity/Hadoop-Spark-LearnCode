@@ -1,6 +1,6 @@
 package com.leishen.project.sql
 
-import org.apache.spark.sql.{Row, SQLContext}
+import org.apache.spark.sql.{Column, Row, SQLContext}
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -13,24 +13,18 @@ object FilterAndWhere {
     val sparkContext = new SparkContext(conf)
     val sqlContext = new SQLContext(sparkContext)
 
-    val data =sqlContext.read.  format("com.databricks.spark.csv")
-      .option("header","true")
-      .option("inferSchema",true.toString)
+    val data = sqlContext.read.format("com.databricks.spark.csv")
+      .option("header", "true")
+      .option("inferSchema", true.toString)
       .load("D:\\Hadoop\\hadoop-2.6.0\\datatest\\world.csv")
 
-    //data.show()
-    val resultData = data
-    val columns = resultData.columns
 
-    println(columns)
     import sqlContext.implicits._
-    resultData.filter($"age"<= 22).show()
-    resultData.where($"age" <= 22 && $"height" === 22).show()
-    resultData.agg(Map("age"->"max","age"->"min","age"->"variance","age"->"sum","age"->"count")).show()
+    val result = data.filter("age >11 and age <=22")
+    println(data.schema("age"))
+    result.show()
 
-    println(resultData.schema("age").dataType)
-    val data12 = data.unionAll(data)
-    data12.show(100)
+
 
     sparkContext.stop()
 
