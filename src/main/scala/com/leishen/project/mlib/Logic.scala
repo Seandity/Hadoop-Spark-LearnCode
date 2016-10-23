@@ -1,9 +1,6 @@
 package com.leishen.project.mlib
 
-import org.apache.spark.ml.feature.LabeledPoint
-import org.apache.spark.ml.linalg.Vectors
-import org.apache.spark.ml.regression.LinearRegression
-import org.apache.spark.mllib.regression.LinearRegressionWithSGD
+
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -16,11 +13,11 @@ object Logic {
 
     val inputRdd = sparkContext.textFile("/home/sltest/data.txt")
 
-    val examples = inputRdd.map(line =>{
+  /*  val examples = inputRdd.map(line =>{
       val parts = line.split(",")
 
       LabeledPoint(parts(6).toDouble,Vectors.dense(parts.map(value =>value.toDouble)))
-    })
+    })*/
 
    /* val model = LinearRegressionWithSGD.train(examples,100,0.5,0.7,Vectors.dense(Array(0.0)))*/
 
