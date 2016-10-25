@@ -11,7 +11,7 @@ object Accumulator {
     val sparkConf = new SparkConf().setAppName("Accumulator").setMaster("local")
     val sparkContext = new SparkContext(sparkConf)
 
-    val acc = sparkContext.accumulator(10)
+    val acc = sparkContext.accumulator(10, "shenlei")
 
     val rdd = sparkContext.parallelize(List(1, 2, 3, 4, 5, 6, 6, 2, 34, 234, 234, 23, 4, 523, 45, 23, 5, 234))
 
@@ -20,10 +20,10 @@ object Accumulator {
         acc += 1
       value + 1
     })
+    result.count()
+    print(acc.value)
+    sparkContext.stop()
 
-    result.saveAsTextFile("D:\\Hadoop\\hadoop-2.6.0\\datatest\\accumulator.txt")
-
-    println("accumulator result is " + acc)
   }
 
 }
