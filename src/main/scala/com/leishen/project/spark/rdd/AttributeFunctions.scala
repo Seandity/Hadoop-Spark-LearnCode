@@ -1,4 +1,4 @@
-package com.leishen.project.rdd
+package com.leishen.project.spark.rdd
 
 import org.apache.spark.{SparkConf, SparkContext}
 

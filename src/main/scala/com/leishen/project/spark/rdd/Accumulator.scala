@@ -1,4 +1,4 @@
-package com.leishen.project.rdd
+package com.leishen.project.spark.rdd
 
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -21,7 +21,7 @@ object Accumulator {
       value + 1
     })
 
-    result.saveAsTextFile("D:\\Hadoop\\hadoop-2.6.0\\datatest\\accumulator.txt")
+   // result.saveAsTextFile("D:\\Hadoop\\hadoop-2.6.0\\datatest\\accumulator.txt")
 
     println("accumulator result is " + acc)
   }

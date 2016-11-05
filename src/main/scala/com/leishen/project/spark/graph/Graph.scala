@@ -1,4 +1,4 @@
-package com.leishen.project.graph
+package com.leishen.project.spark.graph
 
 import java.io.{BufferedWriter, File, FileWriter}
 

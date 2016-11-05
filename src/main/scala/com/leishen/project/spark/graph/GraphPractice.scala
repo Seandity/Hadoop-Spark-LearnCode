@@ -1,4 +1,4 @@
-package com.leishen.project.graph
+package com.leishen.project.spark.graph
 
 import org.apache.spark.graphx.{Edge, Graph}
 import org.apache.spark.{SparkConf, SparkContext}

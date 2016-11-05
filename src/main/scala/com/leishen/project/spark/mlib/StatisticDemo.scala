@@ -1,4 +1,4 @@
-package com.leishen.project.mlib
+package com.leishen.project.spark.mlib
 
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.mllib.stat.Statistics

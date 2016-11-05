@@ -1,4 +1,4 @@
-package com.leishen.project.sql
+package com.leishen.project.spark.sql
 
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}

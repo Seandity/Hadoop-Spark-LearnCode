@@ -1,4 +1,4 @@
-package com.leishen.project.sql
+package com.leishen.project.spark.sql
 
 import org.apache.spark.sql.{Row, SQLContext}
 import org.apache.spark.sql.types.{DataType, DoubleType, StructField, StructType}
