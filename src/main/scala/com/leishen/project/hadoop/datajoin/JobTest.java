@@ -2,8 +2,11 @@ package com.leishen.project.hadoop.datajoin;
 
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
@@ -12,7 +15,7 @@ import java.io.IOException;
  */
 public class JobTest {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws ClassNotFoundException, InterruptedException {
         Configuration config = new Configuration();
         try {
             Job job = Job.getInstance(config);
@@ -27,6 +30,11 @@ public class JobTest {
 
             job.setOutputKeyClass(Text.class);
             job.setOutputValueClass(Text.class);
+
+            FileInputFormat.setInputPaths(job,new Path("S:\\joindata"));
+            FileOutputFormat.setOutputPath(job,new Path("S:\\result"));
+
+            job.waitForCompletion(false);
 
 
         } catch (IOException e) {

@@ -24,15 +24,14 @@ public class JoinMapper extends Mapper<LongWritable, Text, Text, InfoBean> {
         InfoBean bean = new InfoBean();
         String[] fields = line.trim().split(",");
         String id = fields[0];
-        if ("fileName1".equals(fileName)) {
-
+        if ("people.txt".equals(fileName)) {
             String name = fields[1];
             int age = Integer.parseInt(fields[2]);
             String sex = fields[3];
             bean.set(id, name, age, sex, "", "1");
-        } else {
+        } else if("department.txt".equals(fileName)) {
             String department = fields[1];
-            bean.set(id, "", 0, "", department, "12");
+            bean.set(id, "", 0, "", department, "2");
         }
         context.write(new Text(id), bean);
     }

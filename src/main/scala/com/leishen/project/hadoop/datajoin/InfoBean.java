@@ -10,7 +10,12 @@ import java.io.IOException;
  * Created by shenlei on 2016/11/19 0019.
  */
 public class InfoBean implements Writable {
-
+    private String id;
+    private String name;
+    private int age;
+    private String sex;
+    private String department;
+    private String flag;
     public String getId() {
         return id;
     }
@@ -73,12 +78,7 @@ public class InfoBean implements Writable {
         this.flag = flag;
     }
 
-    private String id;
-    private String name;
-    private int age;
-    private String sex;
-    private String department;
-    private String flag;
+
 
     public void write(DataOutput dataOutput) throws IOException {
         dataOutput.writeUTF(id);
