@@ -1,4 +1,4 @@
-package com.leishen.project.hadoop;
+package com.leishen.project.hadoop.wordcount;
 
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
