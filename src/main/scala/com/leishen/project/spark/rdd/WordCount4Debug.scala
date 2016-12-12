@@ -16,7 +16,7 @@ object WordCount4Debug {
     val rdd = sparkContext.textFile("L:\\word.txt")
 
     val resultRdd = rdd.flatMap(_.split(" ")).map(word=>(word,1)).reduceByKey(_+_)
-    resultRdd.foreach(println(_))
+   println(resultRdd.count())
 
     sparkContext.stop()
   }
