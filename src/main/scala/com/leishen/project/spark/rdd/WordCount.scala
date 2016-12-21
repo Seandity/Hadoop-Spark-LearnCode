@@ -17,7 +17,8 @@ object WordCount {
       println("word :" + wordCount._1 + " count :" + wordCount._2)
     })
 
-    sparkContext.stop()
+    wordRdd.saveAsTextFile()
+     sparkContext.stop()
   }
 
 }
